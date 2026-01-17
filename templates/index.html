@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Estates | Luxury Living</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">ELITE ESTATES</div>
+        <nav>
+            <a href="#" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="#properties" class="nav-link" data-en="Properties" data-ar="العقارات">Properties</a>
+            <a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">Contact</a>
+            <button id="lang-btn" onclick="toggleLanguage()">🇦🇪 العربية</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="/static/images/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 id="hero-title">Invest in Your Legacy</h1>
+            <p id="hero-desc">Exclusive collection of premium residences in the UAE.</p>
+            <a href="#properties" class="btn-main" id="hero-btn">Explore Units</a>
+        </div>
+    </section>
+
+    <section id="properties" class="properties-section">
+        <div class="section-header" data-aos="fade-down">
+            <h2 id="prop-title">Featured Properties</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="filter-container" data-aos="fade-in">
+            <button class="filter-btn active" onclick="filterProperties('all')">All</button>
+            <button class="filter-btn" onclick="filterProperties('villa')">Villas</button>
+            <button class="filter-btn" onclick="filterProperties('apartment')">Apartments</button>
+        </div>
+
+        <div class="grid-container" id="properties-grid">
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="contact-container" data-aos="fade-up">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Sent!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Message..." required></textarea>
+                <button type="submit" class="btn-main" style="width:100%">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <h2>ELITE ESTATES</h2>
+        <p>© 2026 All Rights Reserved.</p>
+        <br>
+        <a href="/admin"
+            style="color:#555; text-decoration:none; font-size:12px; border:1px solid #333; padding:5px;">Admin
+            Login</a>
+    </footer>
+
+    <a href="https://wa.me/971500000000" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <div class="chat-widget">
+        <div class="chat-header" onclick="toggleChat()">🤖 AI Assistant</div>
+        <div class="chat-body" id="chat-body" style="display:none;">
+            <div id="chat-messages"></div>
+            <input type="text" id="chat-input" placeholder="Ask me..." onkeypress="handleChat(event)">
+        </div>
+    </div>
+
+    <div id="lightbox-modal" class="modal">
+        <span class="close-modal" onclick="closeModal('lightbox-modal')">&times;</span>
+        <img id="lightbox-img" class="modal-content-img">
+    </div>
+    <div id="map-modal" class="modal">
+        <span class="close-modal" onclick="closeModal('map-modal')">&times;</span>
+        <div id="map-container"></div>
+    </div>
+    <div id="tour-modal" class="modal">
+        <span class="close-modal" onclick="closeModal('tour-modal')">&times;</span>
+        <div id="panorama"></div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

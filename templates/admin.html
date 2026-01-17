@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f0f0f0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #d4af37;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #b59020;
+        }
+
+        .back-link {
+            display: block;
+            margin-bottom: 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/" class="back-link">&larr; Back to Website</a>
+        <h2>Add New Property</h2>
+        <input type="text" id="title" placeholder="Property Title">
+        <input type="text" id="price" placeholder="Price (e.g. 5,000,000 AED)">
+        <input type="text" id="location" placeholder="Location">
+        <select id="type">
+            <option value="villa">Villa</option>
+            <option value="apartment">Apartment</option>
+        </select>
+        <input type="text" id="img" placeholder="Image Name (e.g. villa1.jpg)">
+        <button onclick="addProperty()">Add Property</button>
+    </div>
+
+    <script>
+        async function addProperty() {
+            const data = {
+                title: document.getElementById('title').value,
+                price: document.getElementById('price').value,
+                location: document.getElementById('location').value,
+                type: document.getElementById('type').value,
+                beds: 4, baths: 4, area: "3000 sqft", // قيم افتراضية للتسهيل
+                img: document.getElementById('img').value,
+                coords: [25.2, 55.2],
+                panorama: "https://pannellum.org/images/alma.jpg"
+            };
+
+            const res = await fetch('/api/add_property', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await res.json();
+            if (result.success) {
+                alert("Added Successfully!");
+                location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>

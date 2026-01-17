@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "title": "Sea View Villa",
+        "location": "Saadiyat Island, Abu Dhabi",
+        "price": "15,000,000 AED",
+        "type": "villa",
+        "beds": 5,
+        "baths": 6,
+        "area": "6,500 sqft",
+        "img": "static/images/villa1.jpg",
+        "coords": [
+            24.5422,
+            54.4372
+        ],
+        "panorama": "https://pannellum.org/images/alma.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Downtown Penthouse",
+        "location": "Downtown Dubai",
+        "price": "5,200,000 AED",
+        "type": "apartment",
+        "beds": 3,
+        "baths": 3,
+        "area": "2,800 sqft",
+        "img": "static/images/duplex.jpg",
+        "coords": [
+            25.1972,
+            55.2744
+        ],
+        "panorama": "https://pannellum.org/images/bma-0.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Royal Mansion",
+        "location": "Emirates Hills, Dubai",
+        "price": "45,000,000 AED",
+        "type": "palace",
+        "beds": 8,
+        "baths": 10,
+        "area": "15,000 sqft",
+        "img": "static/images/palace.jpg",
+        "coords": [
+            25.0657,
+            55.1586
+        ],
+        "panorama": "https://pannellum.org/images/jfk.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Palm Jumeirah Villa",
+        "location": "Palm Jumeirah, Dubai",
+        "price": "28,000,000 AED",
+        "type": "villa",
+        "beds": 6,
+        "baths": 7,
+        "area": "8,000 sqft",
+        "img": "static/images/villa1.jpg",
+        "coords": [
+            25.1124,
+            55.1390
+        ],
+        "panorama": "https://pannellum.org/images/alma.jpg"
+    }
+]
