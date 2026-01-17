@@ -84,8 +84,10 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    /* مهم عشان الفيديو ميخرجش برا */
+    /* ده السطر المهم اللي بيحط الصورة */
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    /* لون احتياطي لو الصورة لسه بتحمل */
+    background-color: #000;
 }
 
 /* تعديل مهم للفيديو عشان يملأ الشاشة صح */
